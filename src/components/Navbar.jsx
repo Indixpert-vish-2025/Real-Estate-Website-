@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/logo/myhousinghunt-logo.png";
 import menuIcon from "../assets/icon/menu.svg";
 import addListingIcon from "../assets/icon/add-listing.svg";
@@ -14,14 +15,13 @@ const Navbar = () => {
           height: "72px",
         }}
       >
-        {/* LEFT : LOGO */}
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        
+        <Link to="/">
           <img src={logo} alt="MyHousingHunt" height="40" />
-        </div>
+        </Link>
 
-        {/* RIGHT : MENU + ADD LISTING */}
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          
+
           {/* Menu */}
           <div
             style={{
@@ -37,8 +37,9 @@ const Navbar = () => {
             <span>Menu</span>
           </div>
 
-          {/* Add Listing */}
-          <button
+          {/* Add Listing (Link) */}
+          <Link
+            to="/add-listing"
             style={{
               display: "flex",
               alignItems: "center",
@@ -51,11 +52,12 @@ const Navbar = () => {
               cursor: "pointer",
               fontSize: "14px",
               fontWeight: 600,
+              textDecoration: "none",
             }}
           >
             <img src={addListingIcon} alt="Add Listing" height="14" />
             Add Listing
-          </button>
+          </Link>
 
         </div>
       </div>
