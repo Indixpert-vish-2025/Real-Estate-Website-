@@ -24,7 +24,7 @@ const RealEstateTool = () => {
           </div>
         </div>
 
-        {/* Card 2 – image niche LEFT square */}
+      
         <div className="tool-row reverse">
           <div className="tool-image">
             <img src={toolImg2} alt="Real Estate Tool" />

@@ -3,17 +3,23 @@ import propertyImg from "../assets/images/property-1.jpg";
 import bedIcon from "../assets/icon/bed.svg";
 import bathIcon from "../assets/icon/bath.svg";
 import sizeIcon from "../assets/icon/size.svg";
+import heartIcon from "../assets/icon/heart.svg";
 
-const PropertySection = ({ title }) => {
+const PropertySection = ({ title, isFirst }) => {
   return (
-    <section className="property-section">
+    <section className={`property-section ${isFirst ? "first" : ""}`}>
       <div className="container">
 
-        <div className="section-header">
-          <h3>{title}</h3>
+        {/* SMALL TOP HEADING */}
+        <h2 className="featured-heading">{title}</h2>
+
+        {/* TITLE + ARROWS */}
+        <div className="section-header ">
+          
           <div className="arrow">← →</div>
         </div>
 
+        {/* PROPERTY GRID */}
         <div className="property-grid">
           {[1, 2, 3].map((item) => (
             <div className="property-card" key={item}>
@@ -21,10 +27,12 @@ const PropertySection = ({ title }) => {
               {/* IMAGE */}
               <div className="property-img">
                 <img src={propertyImg} alt="Property" />
-                <span className="fav">❤</span>
+                <span className="fav">
+                  <img src={heartIcon} alt="Wishlist" />
+                </span>
               </div>
 
-              {/* OVERLAY CARD */}
+              {/* WHITE OVERLAY CARD */}
               <div className="property-body">
                 <div className="property-head">
                   <h4>Hilltruck Valley</h4>
@@ -37,13 +45,13 @@ const PropertySection = ({ title }) => {
 
                 <div className="property-info">
                   <span>
-                    <img src={bathIcon} /> 2 Baths
+                    <img src={bathIcon} alt="" /> 2 Baths
                   </span>
                   <span>
-                    <img src={bedIcon} /> 4 Beds
+                    <img src={bedIcon} alt="" /> 4 Beds
                   </span>
                   <span>
-                    <img src={sizeIcon} /> 2980 sqft
+                    <img src={sizeIcon} alt="" /> 2980 sqft
                   </span>
                 </div>
               </div>

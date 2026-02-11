@@ -142,12 +142,12 @@
   color: var(--primary);
 }
 
-/* ===== FOOTER RIGHT (ICONS + APP) ===== */
+
 .footer-app {
   text-align: right;
 }
 
-/* EUR + English icons */
+
 .footer-select-icons {
   display: flex;
   gap: 14px;
@@ -176,7 +176,7 @@
   height: 14px;
 }
 
-/* App Store + Google Play (group image) */
+
 .app-download {
   width: 220px;
   margin-top: 10px;
@@ -291,6 +291,7 @@
 .real-estate-tool {
   padding: 80px 0;
   background: #fff;
+  margin-top: -80px;
 }
 
 .tool-row {
@@ -313,7 +314,7 @@
   display: block;
 }
 
-/* ORANGE CONTENT BOX – FIRST CARD */
+
 .tool-content {
   position: absolute;
   top: 50%;
@@ -392,9 +393,23 @@
   padding: 50px 0;
 }
 
+
+.property-section.first {
+  margin-top: -240px;
+}
+
+
+.featured-heading {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4A4A4A;
+  margin-bottom: 8px;
+}
+
+/* HEADER */
 .section-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -407,6 +422,7 @@
 .section-header .arrow {
   color: var(--primary);
   cursor: pointer;
+  font-size: 18px;
 }
 
 /* GRID */
@@ -433,25 +449,29 @@
   border-radius: 6px;
 }
 
+/* HEART ICON */
 .property-img .fav {
   position: absolute;
   top: 10px;
   right: 10px;
   background: var(--primary);
-  color: #fff;
   width: 28px;
   height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 12px;
 }
 
-/* OVERLAY WHITE CARD */
+.property-img .fav img {
+  width: 14px;
+  height: 14px;
+}
+
+/* WHITE OVERLAY CARD */
 .property-body {
   position: absolute;
-  bottom: -32px;              
+  bottom: -32px;
   left: 50%;
   transform: translateX(-50%);
   background: #fff;
@@ -461,7 +481,6 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   z-index: 2;
 }
-
 
 /* TITLE + PRICE */
 .property-head {
@@ -517,4 +536,101 @@
   .property-grid {
     grid-template-columns: 1fr;
   }
+
+  .property-section.first {
+    margin-top: 0;
+  }
+
+  .property-body {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: -20px;
+  }
+}
+/* ===== APP PROMO SECTION ===== */
+
+.app-promo {
+  background: var(--primary);   
+  padding: -25px 0;
+  color: #fff;
+}
+
+.app-promo-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+/* LEFT */
+.app-promo-content h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.app-promo-content p {
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 420px;
+  margin-bottom: 22px;
+  opacity: 0.95;
+}
+
+.store-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.store-buttons img {
+  height: 42px;
+  cursor: pointer;
+}
+
+/* RIGHT */
+.app-promo-image {
+  text-align: right;
+}
+
+.app-promo-image img {
+  max-height: 430px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .app-promo-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .store-buttons {
+    justify-content: center;
+  }
+
+  .app-promo-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+
+/* ===== SIGN IN HOVER EFFECT ===== */
+
+.signin-hover {
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.signin-hover:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.signin-hover:hover img {
+  filter: brightness(0) invert(1);
 }

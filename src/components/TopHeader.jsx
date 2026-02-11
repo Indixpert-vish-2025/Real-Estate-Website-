@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import langIcon from "../assets/icon/language.svg";
 import locationIcon from "../assets/icon/location.svg";
@@ -19,13 +20,7 @@ const TopHeader = () => {
   };
 
   return (
-    <div
-      style={{
-        background: "#f7f7f7",
-        borderBottom: "1px solid #eee",
-        color: "var(--primary)", 
-      }}
-    >
+    <div style={{ background: "#f7f7f7", borderBottom: "1px solid #eee" }}>
       <div
         className="container"
         style={{
@@ -34,29 +29,22 @@ const TopHeader = () => {
           height: "42px",
           alignItems: "center",
           fontSize: "14px",
+          color: "var(--primary)",
         }}
       >
         {/* LEFT */}
         <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
           <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-            <img src={langIcon} alt="Language" height="14" />
-            <select
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              style={selectStyle}
-            >
+            <img src={langIcon} height="14" />
+            <select value={language} onChange={(e) => setLanguage(e.target.value)} style={selectStyle}>
               <option>English</option>
               <option>Hindi</option>
             </select>
           </div>
 
           <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-            <img src={locationIcon} alt="Location" height="14" />
-            <select
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              style={selectStyle}
-            >
+            <img src={locationIcon} height="14" />
+            <select value={city} onChange={(e) => setCity(e.target.value)} style={selectStyle}>
               <option>Marbella</option>
               <option>Delhi</option>
               <option>Mumbai</option>
@@ -64,12 +52,8 @@ const TopHeader = () => {
           </div>
 
           <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-            <img src={currencyIcon} alt="Currency" height="14" />
-            <select
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value)}
-              style={selectStyle}
-            >
+            <img src={currencyIcon} height="14" />
+            <select value={currency} onChange={(e) => setCurrency(e.target.value)} style={selectStyle}>
               <option>EUR</option>
               <option>INR</option>
               <option>USD</option>
@@ -78,18 +62,21 @@ const TopHeader = () => {
         </div>
 
         {/* RIGHT */}
-        <div
-          style={{
-            display: "flex",
-            gap: "6px",
-            alignItems: "center",
-            cursor: "pointer",
-            fontWeight: 600,
-          }}
-        >
-          <img src={userIcon} alt="User" height="14" />
-          <span>Sign In</span>
-        </div>
+        <Link
+  to="/signin"
+  className="signin-hover"
+  style={{
+    display: "flex",
+    gap: "6px",
+    alignItems: "center",
+    fontWeight: 600,
+    textDecoration: "none",
+  }}
+>
+  <img src={userIcon} height="14" />
+  Sign In
+</Link>
+
       </div>
     </div>
   );

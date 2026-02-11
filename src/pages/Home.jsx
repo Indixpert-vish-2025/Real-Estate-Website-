@@ -3,7 +3,8 @@ import Navbar from "../components/Navbar";
 import HeroSearch from "../components/HeroSearch";
 import SearchTools from "../components/SearchTools";
 import RealEstateTool from "../components/RealEstateTool";
-import PropertySection from "../components/PropertySection"
+import PropertySection from "../components/PropertySection";
+import AppPromo from "../components/AppPromo";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -14,7 +15,15 @@ const Home = () => {
       <HeroSearch />
       <SearchTools />
       <RealEstateTool />
-      <PropertySection/>
+
+      
+      <PropertySection title="Featured Property" isFirst />
+      <PropertySection title="Listed as Urgent" />
+      <PropertySection title="Recently Listed" />
+
+      
+      <AppPromo />
+
       <Footer />
     </>
   );
